@@ -1,12 +1,12 @@
-# AtomicFlow
+# Atomic-Workflow
 
-AtomicFlow is an AI-driven Agentic Workflow framework designed to solve massive projects by breaking them down into atomic, consistent, and independent stages.
+Atomic-Workflow is an AI-driven Agentic Workflow framework designed to solve massive projects by breaking them down into atomic, consistent, and independent stages.
 
-Inspired by industry best practices, AtomicFlow ensures that your AI assistant maintains a "Zero Hallucination Context" by isolating your project state and documenting it retroactively.
+Inspired by industry best practices, Atomic-Workflow ensures that your AI assistant maintains a "Zero Hallucination Context" by isolating your project state and documenting it retroactively.
 
 ## Installation
 
-There are two ways to use AtomicFlow in your AI projects (Antigravity, Claude Code, etc.):
+There are two ways to use Atomic-Workflow in your AI projects (Antigravity, Claude Code, etc.):
 
 ### Option 1: Run on the fly (No installation required)
 Using `npx` will download the latest version temporarily and execute it:
@@ -22,14 +22,14 @@ atomic-workflow init
 ```
 
 ### What does this do?
-1. Creates the `.agent/skills/atomicflow` directory in your current project.
+1. Creates the `.agent/skills/atomic-workflow` directory in your current project.
 2. Extracts the orchestrator and sub-skills safely without affecting any existing skills (like `ag-kit`).
 3. Leaves everything ready to use.
 
 ## Usage
 
 Once installed, open a chat with your AI assistant inside the project directory and say:
-> "Start a new project using AtomicFlow"
+> "Start a new project using Atomic-Workflow"
 
 The AI will enter an **Onboarding Mode** where it will ask you a few setup questions (documentation language, AI verbosity, etc.) and will automatically load the `Planner`, `Implementer`, or `Debugger` profiles depending on your project's progress.
 

@@ -33,7 +33,7 @@ async function run() {
     const command = args[0];
 
     if (command === 'init') {
-        console.log('⚡ Initializing AtomicFlow in your project...');
+        console.log('⚡ Initializing Atomic-Workflow in your project...');
         
         try {
             // 1. Create .agent/skills/ if it doesn't exist (safe, doesn't overwrite)
@@ -43,23 +43,23 @@ async function run() {
 
             // 2. Clear ONLY the atomic-workflow folder if it exists (for clean updates)
             if (fs.existsSync(atomicFlowDir)) {
-                console.log('🔄 Updating existing AtomicFlow installation...');
+                console.log('🔄 Updating existing Atomic-Workflow installation...');
                 fs.rmSync(atomicFlowDir, { recursive: true, force: true });
             }
 
             // 3. Copy the template files into .agent/skills/atomic-workflow
             copyFolderSync(sourceDir, atomicFlowDir);
 
-            console.log('✅ AtomicFlow installed successfully!');
+            console.log('✅ Atomic-Workflow installed successfully!');
             console.log('📂 Location: .agent/skills/atomic-workflow/');
             console.log('🚀 Next Step: Open a chat with your AI assistant and say: "Start a new project"');
 
         } catch (error) {
-            console.error('❌ Failed to install AtomicFlow:', error.message);
+            console.error('❌ Failed to install Atomic-Workflow:', error.message);
             process.exit(1);
         }
     } else {
-        console.log('AtomicFlow CLI');
+        console.log('Atomic-Workflow CLI');
         console.log('Usage: npx atomic-workflow init');
     }
 }

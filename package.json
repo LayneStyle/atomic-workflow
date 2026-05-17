@@ -1,10 +1,14 @@
 {
   "name": "atomic-workflow",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "An AI-driven Agentic Workflow framework for subdividing massive projects into atomic, independent stages.",
   "main": "index.js",
+  "files": [
+    "bin",
+    "template"
+  ],
   "bin": {
-    "atomic-workflow": "./bin/cli.js"
+    "atomic-workflow": "bin/cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +17,7 @@
     "ai",
     "agent",
     "workflow",
-    "atomicflow",
+    "atomic-workflow",
     "claude",
     "antigravity"
   ],
