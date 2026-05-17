@@ -1,6 +1,6 @@
 {
   "name": "atomic-workflow",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An AI-driven Agentic Workflow framework for subdividing massive projects into atomic, independent stages.",
   "main": "index.js",
   "files": [

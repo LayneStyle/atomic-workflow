@@ -32,7 +32,7 @@ async function run() {
     const args = process.argv.slice(2);
     const command = args[0];
 
-    if (command === 'init') {
+    if (command === 'init' || command === 'update') {
         console.log('⚡ Initializing Atomic-Workflow in your project...');
         
         try {
@@ -60,7 +60,7 @@ async function run() {
         }
     } else {
         console.log('Atomic-Workflow CLI');
-        console.log('Usage: npx atomic-workflow init');
+        console.log('Usage: npx atomic-workflow <init|update>');
     }
 }
 
