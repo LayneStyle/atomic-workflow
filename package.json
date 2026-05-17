@@ -1,0 +1,22 @@
+{
+  "name": "atomic-workflow",
+  "version": "1.0.0",
+  "description": "An AI-driven Agentic Workflow framework for subdividing massive projects into atomic, independent stages.",
+  "main": "index.js",
+  "bin": {
+    "atomic-workflow": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "workflow",
+    "atomicflow",
+    "claude",
+    "antigravity"
+  ],
+  "author": "Community",
+  "license": "MIT"
+}
