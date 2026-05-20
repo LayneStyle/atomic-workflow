@@ -10,8 +10,9 @@ Before writing any code, read the following in order:
 1. `/.ai/00_config.json`
 2. `/.ai/00_design_doc.md` — to understand the feature's intended purpose and business rules.
 3. `/.ai/01_tech_stack.md` — to ensure code uses the correct stack and conventions.
-4. `/.ai/02_estado_actual.md` — to understand what already exists and avoid redundancy.
-5. The Active Stage file (e.g., `/.ai/stages/stage_03.md`) — to identify the specific task to implement.
+4. `/.ai/02_current_state.md` — to understand what already exists and avoid redundancy.
+5. `/.ai/03_context_index.md` — to identify exact names and locations of global variables, interfaces, flows, and API endpoints.
+6. The Active Stage file (e.g., `/.ai/stages/stage_03.md`) — to identify the specific task to implement.
 
 ---
 
@@ -38,7 +39,7 @@ After completing the code for any task (whether done directly or via an external
 ```
 Step 1: Mark the task [x] in the active stage file.
 Step 2: Read sub_skills/documenter.md.
-Step 3: Execute the Documenter to update /.ai/02_estado_actual.md and /.ai/implementations/.
+Step 3: Execute the Documenter to update /.ai/02_current_state.md, /.ai/03_context_index.md, and /.ai/implementations/.
 Step 4: If any prior documentation became outdated due to this implementation, update it and log the change in /.ai/04_decision_log.md.
 Step 5: ONLY THEN, report to the user that the task is complete.
 ```
@@ -47,6 +48,9 @@ Step 5: ONLY THEN, report to the user that the task is complete.
 
 ---
 
-## Exit Condition
+## ⚓ EXIT CONDITION (MANDATORY RETURN HOOK)
+Before terminating your turn, you MUST read the active state anchor to reorient the orchestrator.
+**Action:** Use the `view_file` tool to read `/.ai/00_active_context.md`.
+
 When the code is written AND documented, tell the user:
-*"I have implemented and documented the current task. Please test the implementation. If everything works as expected, tell me to proceed to the next task — or report any bugs."*
+*"I have implemented and documented the current task. I have read the active context anchor and returned control to the Atomic-Workflow Orchestrator. Please test the implementation. If everything works as expected, tell me to proceed to the next task — or report any bugs."*

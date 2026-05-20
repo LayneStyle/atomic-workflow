@@ -24,11 +24,11 @@ def load_context():
             print(f.read())
             print("\n")
 
-    # Load Estado Actual
-    estado_path = os.path.join(ai_dir, "02_estado_actual.md")
-    if os.path.exists(estado_path):
-        print("--- ESTADO ACTUAL (Global Map) ---")
-        with open(estado_path, "r", encoding="utf-8") as f:
+    # Load Current State
+    current_state_path = os.path.join(ai_dir, "02_current_state.md")
+    if os.path.exists(current_state_path):
+        print("--- CURRENT STATE (Global Map) ---")
+        with open(current_state_path, "r", encoding="utf-8") as f:
             print(f.read())
             print("\n")
 

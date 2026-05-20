@@ -14,7 +14,8 @@ You will receive the error logs or description from the user.
 ## Execution Rules
 
 1. **Document-First Context**: DO NOT blindly search the entire codebase. Read the following first to understand the intended architecture:
-   - `/.ai/02_estado_actual.md`
+   - `/.ai/02_current_state.md`
+   - `/.ai/03_context_index.md`
    - The relevant `/.ai/implementations/impl_stage_XX.md`
    - `/.ai/00_design_doc.md` (to confirm intended behavior)
 
@@ -25,7 +26,7 @@ You will receive the error logs or description from the user.
 3. **Fix the Bug**: Modify the source code to resolve the error. Ensure the fix adheres to the original "Zero Patches" production standard.
 
 4. **Retroactive Consistency (CRITICAL)**: Once the fix is applied, assess its scope:
-   - **Isolated fix** (no architecture change): Update `/.ai/03_error_log.md` and the relevant `impl_stage_XX.md` to note the fix.
+   - **Isolated fix** (no architecture change): Update `/.ai/05_error_log.md` and the relevant `impl_stage_XX.md` to note the fix.
    - **Architectural change** (the fix changes how a system works): Follow the full "Current Truth" protocol below.
 
 ---
@@ -36,7 +37,8 @@ If your fix changes a previously documented behavior, contract, or design decisi
 **a) Rewrite ALL affected documents** to reflect the new truth:
 - `/.ai/00_design_doc.md` (if the feature's intended behavior changed)
 - `/.ai/01_tech_stack.md` (if a technology or pattern changed)
-- `/.ai/02_estado_actual.md`
+- `/.ai/02_current_state.md`
+- `/.ai/03_context_index.md`
 - `/.ai/stages/stage_XX.md` (update task descriptions if needed)
 - `/.ai/implementations/impl_stage_XX.md`
 
@@ -53,7 +55,7 @@ If your fix changes a previously documented behavior, contract, or design decisi
 
 ---
 
-## `03_error_log.md` Format (for isolated, non-architectural fixes)
+## `05_error_log.md` Format (for isolated, non-architectural fixes)
 ```markdown
 # Error Log
 
@@ -66,13 +68,11 @@ If your fix changes a previously documented behavior, contract, or design decisi
 
 ---
 
-## ⚠️ MANDATORY RETURN PROTOCOL
+## ⚓ EXIT CONDITION (MANDATORY RETURN HOOK)
+Before terminating your turn, you MUST read the active state anchor to reorient the orchestrator.
+**Action:** Use the `view_file` tool to read `/.ai/00_active_context.md`.
+
 After fixing the bug and updating documentation, STOP and tell the user:
-*"The bug is fixed and the documentation has been updated to reflect the current architecture. Please verify the fix. If everything works, tell me to proceed to the next task."*
+*"The bug is fixed and the documentation has been updated to reflect the current architecture. I have read the active context anchor and returned control to the Atomic-Workflow Orchestrator. Please verify the fix. If everything works, tell me to proceed to the next task."*
 
 **Never report the bug as fixed without completing the documentation cycle first.**
-
----
-
-## Exit Condition
-Documentation is retroactively consistent. All `/.ai/` files reflect the current, working architecture. The error log has been updated.

@@ -159,10 +159,13 @@ This document always reflects the **current, agreed-upon vision**. It is NOT a c
 
 ---
 
-## Exit Condition
+## ⚓ EXIT CONDITION (MANDATORY RETURN HOOK)
 Once `/.ai/00_design_doc.md`, `/.ai/diagrams/erd.md`, and `/.ai/diagrams/user_flows.md` are generated and the user confirms they are accurate, STOP.
 
+1. Write the new active state to `/.ai/00_active_context.md` (e.g., "Awaiting User Approval for Design Phase").
+2. Use the `view_file` tool to read `/.ai/00_active_context.md` to anchor your state.
+
 Tell the user:
-*"The design document and initial diagrams are ready. Please review them — the design doc is the source of truth for what we build, and the diagrams are the visual logic we'll validate against. When you're ready, tell me to proceed to Planning."*
+*"The design document and initial diagrams are ready. I have read the active context anchor and returned control to the Atomic-Workflow Orchestrator. Please review them — the design doc is the source of truth for what we build, and the diagrams are the visual logic we'll validate against. When you're ready, tell me to proceed to Planning."*
 
 Do NOT proceed to the Planner without explicit user confirmation of both the document AND the diagrams.

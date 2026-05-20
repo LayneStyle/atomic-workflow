@@ -179,7 +179,7 @@ After the Documenter runs, update the diagram file to reflect any changes that o
 
 1. **Diagrams are living documents**: If an implementation changes the flow, the diagram MUST be updated. An outdated diagram is worse than no diagram.
 2. **Never leave a broken diagram**: If a diagram no longer matches the code, either fix it or delete it. Never leave it stale.
-3. **Link diagrams from documentation**: In `/.ai/implementations/impl_stage_XX.md` and `/.ai/02_estado_actual.md`, always link to relevant diagrams.
+3. **Link diagrams from documentation**: In `/.ai/implementations/impl_stage_XX.md` and `/.ai/02_current_state.md`, always link to relevant diagrams.
 4. **Name diagrams clearly**: File names must be self-explanatory. `seq_stage_03_payment_webhook.md` is correct. `diagram2.md` is not.
 
 ---
@@ -195,3 +195,11 @@ After the Documenter runs, update the diagram file to reflect any changes that o
   states_order_lifecycle.md           ← Pre-impl state machine
   flow_stage_02_data_pipeline.md      ← Post-impl data flow
 ```
+
+---
+
+## ⚓ EXIT CONDITION (MANDATORY RETURN HOOK)
+Before terminating your turn, you MUST read the active state anchor to reorient the orchestrator.
+**Action:** Use the `view_file` tool to read `/.ai/00_active_context.md`.
+Then, output exactly:
+*"The diagrams have been generated/updated. I have read the active context anchor and am returning control to the Atomic-Workflow Orchestrator."*

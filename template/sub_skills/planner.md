@@ -51,9 +51,12 @@ If at any point during planning a decision in `00_design_doc.md` is revised:
 
 ---
 
-## Exit Condition
+## ⚓ EXIT CONDITION (MANDATORY RETURN HOOK)
 Once all planning documents and architecture diagrams are created, STOP.
-Present the plan to the user and explicitly ask:
+
+1. Write the new active state to `/.ai/00_active_context.md` (e.g., "Awaiting User Approval for Planning Phase").
+2. Use the `view_file` tool to read `/.ai/00_active_context.md` to anchor your state.
+3. Present the plan to the user and explicitly ask:
 *"Please review:
 1. The feature plan in `/.ai/00_master_index.md`
 2. The tech stack in `/.ai/01_tech_stack.md`
